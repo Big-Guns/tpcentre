@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    ignore:
+      # The paper-api version sets the oldest Paper the plugin supports.
+      # Raise it on purpose, not through automatic updates.
+      - dependency-name: io.papermc.paper:paper-api
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
