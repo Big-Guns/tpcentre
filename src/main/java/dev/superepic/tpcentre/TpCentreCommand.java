@@ -35,7 +35,7 @@ final class TpCentreCommand {
             if (player.teleport(loc, TeleportCause.COMMAND)) {
                 player.sendPlainMessage("Centred, facing " + facing.displayName() + ".");
             } else {
-                player.sendPlainMessage("Couldn't centre you, the teleport was blocked by another plugin.");
+                player.sendPlainMessage("Couldn't centre you, something went wrong.");
             }
         }
         return Command.SINGLE_SUCCESS;
