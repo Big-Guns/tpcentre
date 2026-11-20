@@ -7,6 +7,7 @@ import io.papermc.paper.command.brigadier.Commands;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 
 final class TpCentreCommand {
     private TpCentreCommand() {
@@ -31,8 +32,11 @@ final class TpCentreCommand {
             Facing facing = Facing.nearest(loc.getYaw());
             loc.setYaw(facing.yaw());
             loc.setPitch(0f);
-            player.teleport(loc);
-            player.sendPlainMessage("Centred, facing " + facing.displayName() + ".");
+            if (player.teleport(loc, TeleportCause.COMMAND)) {
+                player.sendPlainMessage("Centred, facing " + facing.displayName() + ".");
+            } else {
+                player.sendPlainMessage("Couldn't centre you, the teleport was blocked by another plugin.");
+            }
         }
         return Command.SINGLE_SUCCESS;
     }
