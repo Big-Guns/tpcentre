@@ -1,0 +1,26 @@
+# OS and editor cruft
+.DS_Store
+._*
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Build output
+.gradle/
+build/
+out/
+
+# Local test server (run-task)
+run/
+
+# Local environment files
+.env
+.env.*
+
+# Agent files and local design docs (kept out of the public repo)
+CLAUDE.md
+AGENTS.md
+.claude/
+docs/
