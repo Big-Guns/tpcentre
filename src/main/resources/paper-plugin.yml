@@ -1,0 +1,10 @@
+name: TpCentre
+version: '${version}'
+main: dev.superepic.tpcentre.TpCentrePlugin
+bootstrapper: dev.superepic.tpcentre.TpCentreBootstrap
+api-version: '26.1'
+authors: [superepic.dev]
+permissions:
+  tpcentre.use:
+    description: Allows use of /tpcentre.
+    default: op
